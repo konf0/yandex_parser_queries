@@ -1,0 +1,9 @@
+CREATE VIEW sravni_row_nuvber
+as
+SELECT 
+"Request",
+"Domen",
+"Type", 
+"Date",
+ROW_NUMBER() OVER (PARTITION BY "Request","Date" ) AS Position
+FROM sravni_queries sq 
